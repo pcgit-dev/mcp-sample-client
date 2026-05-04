@@ -99,57 +99,6 @@ curl -X POST http://localhost:3000/mcp \
   }'
 ```
 
-**Multiply**
-```bash
-curl -X POST http://localhost:3000/mcp \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -H "Mcp-Session-Id: <session-id>" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "tools/call",
-    "params": {
-      "name": "calculator",
-      "arguments": { "operation": "multiply", "a": 12, "b": 9 }
-    }
-  }'
-```
-
-**Divide**
-```bash
-curl -X POST http://localhost:3000/mcp \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -H "Mcp-Session-Id: <session-id>" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 5,
-    "method": "tools/call",
-    "params": {
-      "name": "calculator",
-      "arguments": { "operation": "divide", "a": 144, "b": 12 }
-    }
-  }'
-```
-
-**Divide by zero (error case)**
-```bash
-curl -X POST http://localhost:3000/mcp \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -H "Mcp-Session-Id: <session-id>" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 6,
-    "method": "tools/call",
-    "params": {
-      "name": "calculator",
-      "arguments": { "operation": "divide", "a": 10, "b": 0 }
-    }
-  }'
-```
-
 ---
 
 ### 3. Currency converter tool
